@@ -26,7 +26,7 @@
 	</head>
 	<body>
 		<div id='page' data-role='page'>
-			<div id='header'></div>
+			<div id='header' data-role='header'></div>
 			<br/>
 			<br/>
 			<br/>
@@ -186,7 +186,7 @@
 				</p>
 				<br/>
 				<br/>
-				<div id='footer'>
+				<div id='footer' data-role='footer'>
 					<div style="margin: 0px auto; padding-top:10px; font-size: small; ">
 						<span  id='terms' style="width: 50%; height: 100%;margin-right: 5px;padding: 13px; cursor: pointer; font-size: 5px;" ><img src="images/terms.png" alt="Terms" style="width: 20px; height: 15px" /> </span><span id='about' style="margin-left:5px; width: 50%; height: 100%;padding:13px; cursor: pointer;" ><img src="images/about.png" alt="About" style="width: 20px; height: 15px" /></span>
 					</div>
