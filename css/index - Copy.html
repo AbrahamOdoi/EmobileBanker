@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<title>MOBILE BANKER</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	</head>
+	<body>
+		<div id='page' data-role='page'>
+			<div id='header' data-role='header'>
+				<h1>BANKER</h1>
+			</div>
+
+			<div id='content' data-role='content'>
+				<div id='ctnLogon'>
+					<div id="lblLogon">
+						Secured account access
+					</div>
+
+					<form id="frmLogon">
+						<table>
+							<tr>
+								<td><label for='txtPhonenum'>Phone number</label>
+								<input type="text" name="txtPhonenum" id="txtPhonenum"/>
+								</td>
+								<td><label for='txtPin'>PIN</label>
+								<input type="text" name="txtPin" value="" id="txtPin"/>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+								<input type="submit" name="btnLogon" value="Logon" id="btnLogon" data-theme="a" />
+								<p>
+									It is your responsibility to ensure the secrecy of ypur PIN number.
+								</p></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<img src="images/ad.jpg" alt="slideshow" />
+				<div data-role="collapsible" data-iconpos="right" data-expanded-icon="arrow-u" data-collapsed-icon="arrow-d">
+					<h4>Account Details</h4>
+					<p>
+						<?php
+						//$dbcon=mysql_connect("localhost","heart","F0undAti0n#1");
+						$dbcon = mysql_connect("localhost", "root", "");
+						mysql_select_db("db_heart_foundation");
+
+						$sql = "SELECT * FROM tbl_clients";
+						$result = mysql_query($sql);
+						if (!$result) {
+						echo 'no' . mysql_error();
+						}
+						if (mysql_num_rows($result) > 0) {echo "
+						<ul data-role='listview' data-inset='true' data-filter='true' id='wrpPending' style='color:blue;'>
+							";
+
+							while ($row = mysql_fetch_array($result)) {
+							
+							}
+							echo "
+						</ul>";
+						} else {
+						echo "
+						<div class='pendingHeader' id='codeerror'>
+							NO CLIENTS
+						</div>";
+						}
+						?>
+					</p>
+				</div>
+				<div data-role="collapsible" data-iconpos="right" data-expanded-icon="arrow-u" data-collapsed-icon="arrow-d">
+					<h4>Heading</h4>
+					<p>
+						I'm the collapsible content. By default I'm closed, but you can click the header to open me.
+					</p>
+				</div>
+				<div data-role="collapsible" data-iconpos="right" data-expanded-icon="arrow-u" data-collapsed-icon="arrow-d">
+					<h4>Heading</h4>
+					<p
+					I'm the collapsible content. By default I'm closed, but you can click the header to open me.
+					</p>
+				</div>
+			</div>
+			<div id='footer'>
+				Powered by NALO Solutions
+			</div>
+		</div>
+
+	</body>
+</html>

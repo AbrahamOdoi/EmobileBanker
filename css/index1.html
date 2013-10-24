@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<title>MOBILE BANKER</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+	</head>
+	<body>
+		<div id='indexpage' data-role='page'>
+			<img src="images/splash.gif" alt="splash" id='splash'/>
+			<div id='indexfooter' data-role='footer'>
+				Powered by NALO Solutions
+			</div>
+		</div>
+	</body>
+	<!-- <script type="text/javascript" >
+	function OnDeviceReady() {
+	alert('no');
+	}
+	$(document).ready(function(){
+	alert('yes');
+	document.addEventListener("deviceready", OnDeviceReady, false);
+	});
+	</script>
+	<script type="text/javascript" src="jquery.mobile-1.0.1.min.js"></script>   -->
+
+	<script type="text/javascript" >
+		$(document).ready(function() {
+	alert ('yes');
+			$('#splash').slideDown(6000);
+			$('#indexfooter').fadeIn(6000, function() {
+				window.location = "mainpage.php";
+			});
+		});
+	</script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0a1.min.js"></script>
+</html>
